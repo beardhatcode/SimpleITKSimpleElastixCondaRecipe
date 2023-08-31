@@ -1,31 +1,10 @@
 # SimpleITK Conda Recipe
 
-This repository contains the [Conda build recipe](https://conda.io/docs/building/recipe.html) for SimpleITK.
+This repository contains the [Conda build recipe](https://conda.io/docs/building/recipe.html) for SimpleITK with SimpleElastix.
 
-## Anaconda Cloud Compiled Binaries
+**Note**: this is an untested fork from https://github.com/SimpleITK/SimpleITKCondaRecipe
 
-[![Anaconda-Server Badge](https://anaconda.org/simpleitk/simpleitk/badges/installer/conda.svg)](https://anaconda.org/simpleitk/simpleitk)
-[![Anaconda-Server Badge](https://anaconda.org/simpleitk/simpleitk/badges/version.svg)](https://anaconda.org/simpleitk/simpleitk)
-[![Anaconda-Server Badge](https://anaconda.org/simpleitk/simpleitk/badges/downloads.svg)](https://anaconda.org/simpleitk/simpleitk)
-
-Binaries of the current SimpleITK release for Anaconda on various operating systems and Python versions can be found on
-Anaconda cloud's [SimpleITK channel](https://anaconda.org/simpleitk/simpleitk).
-
-```
-conda install -c simpleitk simpleitk
-```
-
-### Pre-releases
-
-Pre-releases are available under the `dev` label on Adnaconda Cloud.
-
-
-```
-conda install -c simpleitk/label/dev simpleitk
-```
-
-
-## I really do need to build
+## How to build
 
 ### Prerequisite software
 
@@ -40,8 +19,8 @@ conda install -c simpleitk/label/dev simpleitk
    conda update conda-build
    ```
 2. [Git](https://git-scm.com/) version control system.
-3. Compiler (e.g. gcc4.8).  
-On Windows Visual C++ 14.0 is the supported version for Python 3.5-7.  It comes with Visual Studio 2015.  More recent versions of Visual Studio will not work by default.  
+3. Compiler (e.g. gcc4.8).
+On Windows Visual C++ 14.0 is the supported version for Python 3.5-7.  It comes with Visual Studio 2015.  More recent versions of Visual Studio will not work by default.
 Links to download VS2015 can be found [here](https://stackoverflow.com/questions/44290672/how-to-download-visual-studio-community-edition-2015-not-2017).
 
 ### Process
@@ -49,15 +28,15 @@ Links to download VS2015 can be found [here](https://stackoverflow.com/questions
 To build SimpleITK you need to clone this repository and run the build recipe. This will create the package appropriate for your currently active Python version:
 
 ```
-git clone https://github.com/SimpleITK/SimpleITKCondaRecipe.git
-cd SimpleITKCondaRecipe
+git clone https://github.com/beardhatcode/SimpleITKSimpleElastixCondaRecipe.git
+cd SimpleITKSimpleElastixCondaRecipe
 conda build recipe
 ```
 
 You can also build for a version of Python which is not the currently active one, for example Python 3.8:
 ```
-git clone https://github.com/SimpleITK/SimpleITKCondaRecipe.git
-cd SimpleITKCondaRecipe
+git clone https://github.com/beardhatcode/SimpleITKSimpleElastixCondaRecipe.git
+cd SimpleITKSimpleElastixCondaRecipe
 conda build --python 3.8 recipe
 ```
 

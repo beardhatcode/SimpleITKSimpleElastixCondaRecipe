@@ -15,8 +15,8 @@ OUTPUT_DIR=${OUTPUT_DIR:-/work/io/channel}
 conda activate
 
 cd /tmp
-git clone https://github.com/SimpleITK/SimpleITKCondaRecipe.git
-CONDA_RECIPES=$(pwd)/SimpleITKCondaRecipe
+git clone https://github.com/beardhatcode/SimpleITKSimpleElastixCondaRecipe.git
+CONDA_RECIPES=$(pwd) SimpleITKSimpleElastixCondaRecipe
 
 (${CONDA} update -y -n root conda conda-build )|| (echo "conda-build needs to be installed into conda\!";exit 1)
 
