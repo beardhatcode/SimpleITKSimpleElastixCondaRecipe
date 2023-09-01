@@ -20,6 +20,7 @@ cd ${BUILD_DIR}
 PYTHON_INCLUDE_DIR=$(${PYTHON} -c 'import sysconfig;print("{0}".format(sysconfig.get_path("platinclude")))')
 PYTHON_LIBRARY=$(${PYTHON} -c 'import sysconfig;print("{0}/{1}".format(*map(sysconfig.get_config_var, ("LIBDIR", "LDLIBRARY"))))')
 
+echo "START NINJA"
 cmake \
     -G Ninja \
     ${CMAKE_ARGS} \
@@ -61,6 +62,8 @@ cmake \
     -D NIFTI_SYSTEM_MATH_LIB= \
     "${SRC_DIR}/SuperBuild"
 
+echo "START RELEASE BUILD"
 cmake --build . --config Release --target SimpleITK-build
+echo "START INSTALL"
 cd ${BUILD_DIR}/SimpleITK-build/Wrapping/Python
 ${PYTHON} setup.py install
