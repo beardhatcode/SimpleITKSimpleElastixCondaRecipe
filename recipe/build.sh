@@ -63,7 +63,7 @@ cmake \
     "${SRC_DIR}/SuperBuild"
 
 echo "START RELEASE BUILD"
-cmake --build . --config Release --target SimpleITK-build
+cmake --build . --config Release --target SimpleITK-build -j
 echo "START INSTALL"
 cd ${BUILD_DIR}/SimpleITK-build/Wrapping/Python
 ${PYTHON} setup.py install
